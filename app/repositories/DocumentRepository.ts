@@ -23,7 +23,7 @@ export class DocumentRepository {
 
   static async list(): Promise<Document[]> {
     try {
-      const response = await backendClient.get('/api/document')
+      const response = await backendClient.get('/api/document?size=50')
       return response.data
     } catch (error) {
       console.error('Error fetching document:', error)
